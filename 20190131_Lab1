@@ -1,0 +1,154 @@
+#include <iostream>
+#include <cmath>
+/*
+#include <cstdlib>
+For real value pi
+*/
+#include <string>
+
+// Hyunwook Jung(Isaac)
+// Diablo Valley College
+using namespace std;
+
+int main()
+{
+
+// LAB 1
+double numberOne;
+double numberTwo;
+
+// Temporary variable to store numberOne
+double tmp;
+
+cout << "[Lab 1]";
+
+cout << "\nEnter the first number: ";
+cin >> numberOne;
+
+cout << "\nEnter the second number: ";
+cin >> numberTwo;
+
+// Swap numberOne and numberTwo
+tmp = numberOne;
+numberOne = numberTwo;
+numberTwo = tmp;
+
+cout << "\nAfter swaping, the numbers stored in the two variables now are ";
+cout << numberOne << " and " << numberTwo << endl;
+
+
+// Multiply numberOne by 2
+numberOne *= 2;
+
+// Divide numberTwo by 2
+numberTwo /= 2;
+cout << "\nAfter multiplication and division of each numbers by two, the numbers stored in the two variables now are ";
+cout << numberOne << " and " << numberTwo << endl;
+
+cout << "-----------------------------------------------------------------\n";
+// LAB 2
+// Get the input of radius and output the circumference and area
+cout << "[Lab 2]";
+double radiusC, circumC, areaC;
+cout << "\nEnter the value of radius of a circle: ";
+cin >> radiusC;
+
+/*
+cout << fixed << showpoint << setprecision(2);
+
+#include <cstdlib>
+For real value pi
+
+*/
+circumC = radiusC * 2 * 3.14;
+areaC = pow(radiusC, 2) * 3.14;
+
+cout << "\nThe circumference of the circle is " << circumC;
+cout << "\nThe area of the circle is " << areaC;
+
+cout << "\n-----------------------------------------------------------------\n";
+
+// LAB 3
+// Goal: refresh int, float, char, string
+cout << "[Lab 3]";
+int apple;
+cout << "\nHow many apples are there?\n";
+cin >> apple;
+
+double price;
+cout << "\nHow much is one apple?\n";
+cin >> price;
+
+double total = apple * price;
+
+cout << "\nThe total price of apples is " << total << endl;
+
+cout << "-----------------------------------------------------------------\n";
+// LAB 4
+cout << "[Lab 4]";
+string name;
+cout << "\nEnter the name of the student: ";
+cin >> name;
+
+char grade;
+cout << "\nEnter the grade of " << name << ": ";
+cin >> grade;
+
+cout << "************\n";
+cout << "Name: " << name << endl;
+cout << "Grade: " << grade << endl;
+cout << "************\n";
+
+cout << "-----------------------------------------------------------------\n";
+// LAB 5
+cout << "[Lab 5]\n";
+cout << "Enter your grade: ";
+char grade2;
+cin >> grade2;
+
+switch (grade2)
+{
+case 'A':
+case 'a': cout << "You are excellenct!\n";
+ break;
+case 'B':
+case 'b': cout << "You did well enought!\n";
+ break;
+case 'C':
+case 'c': cout << "You still need to improve!\n";
+ break;
+case 'D':
+case 'd': cout << "Awful!\n";
+ break;
+case 'F':
+case 'f': cout << "NOOOOOOO!!!!!!!!\n";
+ break;
+default: cout << "I guess you need to enter between A, B, C, D, or F?\n";
+}
+
+cout << "\n\nEnter predicted year of your graduation: ";
+int graduYear;
+cin >> graduYear;
+
+int curYear = 2019;
+int leftYear = graduYear - curYear;
+
+cout << endl;
+
+if (leftYear < 0)
+{
+ cout << "Wow! You are already graduated!";
+}
+else if (leftYear == 0)
+{
+ cout << "You will graduate this year.";
+}
+else
+{
+ cout << "You will graduate in " << leftYear << " years. Keep on working!";
+}
+
+cout << endl;
+
+return 0;
+}
