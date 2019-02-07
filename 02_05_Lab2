@@ -1,0 +1,124 @@
+#include <iostream>
+// Hyunwook Jung, Isaac
+// 02/05/2019
+// Diablo Valley College
+
+using namespace std;
+
+int main()
+{
+// Lab 1:
+// for loop, take as input an unsigned short int number i
+// and output the average value of all numbers between 0 and this input number
+cout << "-Lab 1" << endl;
+unsigned short int i1;
+
+cout << "Enter an unsigned short interger: ";
+cin >> i1;
+
+int num1 = i1; // number to divide total by
+int total1 = 0;  // to store all values together
+for (int count1 = i1; count1 > 0; count1--)
+{
+ total1 = total1 + count1;
+}
+
+int average1;
+average1 = total1 / num1;
+
+cout << "The average of all numbers between 0 and " << i1 << " is " << average1 << endl;
+
+cout << "-------------------------------------------------------------------" << endl;
+
+// Lab 2:
+// Take as input 10 integers from the user and
+// Output the sum of all these numbers, modulo 10
+cout << "-Lab 2" << endl;
+int numbers2[10];
+
+for (int count2 = 0; count2 < 10; count2++)
+{
+ cout << "Enter #" << (count2 + 1) << ": ";
+ cin >> numbers2[count2];
+}
+
+int total2 = 0;
+
+for (int count2 = 0; count2 < 10; count2++)
+{
+ total2 = total2 + numbers2[count2];
+}
+
+cout << endl << "The sum of ten numbers is " << total2;
+int modulo2 = total2 % 10;
+cout << endl << "The modulo 10 of ten numbers is " << modulo2 << endl;
+
+// Lab 3:
+// Ask the user for an unsigned short integer
+// and determine if i is a prime number
+// Output "yes" if i is prime, "no" if not prime.
+// A number is prime if it can only be divided
+// by 1 and itself with remainder 0.
+// Note: if i<=1 it is NOT prime
+
+cout << "-------------------------------------------------------------------" << endl;
+
+cout << "-Lab 3" << endl;
+
+unsigned short int i3;
+do {
+ cout << "Enter an unsigned short integer bigger than 1: ";
+ cin >> i3;
+} while (i3 <= 1);
+
+bool prime = true;
+
+for (int count3 = i3 - 1; count3 > 1; count3--)
+{
+ if (i3 % count3 == 0)
+ {
+  prime = false;
+ }
+}
+cout << endl;
+
+ if (prime == true)
+  cout << "Yes, it is a prime number.";
+ else if (prime == false)
+  cout << "No, it is not a prime number.";
+
+cout << endl;
+
+cout << "-------------------------------------------------------------------" << endl;
+
+// Ask the user to input 10 probabilities (numbers between 0 and 1)
+// Then output the index(es) of the number(s) with highest probability.
+// Example input: 0.1 0.2 0.3 1 1 1 1 1 0.5 0.6
+// Example output: 3 4 5 6 7
+cout << "-Lab 4" << endl;
+
+double numbers4[10];
+double highest;
+for (int count4 = 0; count4 < 10; count4++)
+{
+ cout << "Enter #" << (count4 + 1) << " between 0 and 1: ";
+ cin >> numbers4[count4];
+}
+
+cout << endl;
+
+highest = numbers4[0];
+for (int count4 = 0; count4 < 10; count4++)
+{
+ if (highest < numbers4[count4])
+  highest = numbers4[count4];
+}
+cout << "The index(es) of highest value is ";
+for (int count4 = 0; count4 < 10; count4++)
+{
+ if (highest == numbers4[count4])
+  cout << count4 << ' ';
+}
+
+return 0;
+}
