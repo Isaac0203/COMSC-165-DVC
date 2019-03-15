@@ -18,11 +18,11 @@ int main()
 	cout << endl << aLength;
 	int temp;	// For swapping values
 
-	for (int count1 = 0; count1 < aLength; ++count1)
+		for (int count1 = 0; count1 < aLength; ++count1)
 	{
 		largest = a[count1];
 
-		for (int count2 = count1; count2 < aLength; count2++)
+		for (int count2 = count1 +1; count2 +1 < aLength; ++count2)
 		{
 
 			if (largest < a[count2])
@@ -35,6 +35,7 @@ int main()
 		temp = a[count1];
 		a[count1] = a[largestIndex];
 		a[largestIndex] = temp;
+		cout << endl << a;
 	}
 
 	cout << endl << a;
