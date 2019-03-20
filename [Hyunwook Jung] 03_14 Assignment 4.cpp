@@ -1,5 +1,9 @@
 #include <iostream>
 #include <string>
+// Hyunwook Jung 
+// COMSC 165 DVC
+// 03 19 2019
+// Assignment 4
 
 using namespace std;
 int main()
