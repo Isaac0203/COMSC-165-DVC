@@ -74,13 +74,14 @@ public:
 
 	//Override
 	
-	double operator+(const EnglishWeight &right)
+	EnglishWeight operator+(const EnglishWeight &right)
 	{
 		double totalOuncesFromLeft = (getPounds() * 16.0) + getOunces();
 		double totalOuncesFromRight = (right.getPounds() * 16.0) + right.getOunces();
 		return (totalOuncesFromLeft + totalOuncesFromRight);
 	}
-	double operator-(const EnglishWeight &right)
+
+	EnglishWeight operator-(const EnglishWeight &right)
 	{
 		double totalOuncesFromLeft = (getPounds() * 16.0) + getOunces();
 		double totalOuncesFromRight = (right.getPounds() * 16.0) + right.getOunces();
