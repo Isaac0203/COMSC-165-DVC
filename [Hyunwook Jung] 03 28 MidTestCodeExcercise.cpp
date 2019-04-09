@@ -36,16 +36,17 @@ private:
 	int pounds;
 	double ounces;
 public:
-	void setPounds(int pds)
+	void setPounds(int pds)		// pounds Mutator
 	{
 		pounds = pds;
 	}
-	void setOunces(double oz)
+	void setOunces(double oz)	// ounces Mutator
 	{
 		ounces = oz;
 		roundOunces();
 	}
-	void roundOunces()
+
+	void roundOunces()	// Convert overflowing ounces into pounds
 	{
 		while (ounces >= 16.0)
 		{
@@ -53,8 +54,8 @@ public:
 			setOunces(getOunces() - 16.0);
 		}
 	}
-	const int getPounds() const;
-	const double getOunces() const;
+	const int getPounds() const;	// pounds accessor
+	const double getOunces() const;	// ounces accessor
 
 	// Constructor
 	EnglishWeight()
@@ -78,7 +79,7 @@ public:
 
 	//Override
 
-	EnglishWeight operator+(const EnglishWeight &right)
+	EnglishWeight operator+(const EnglishWeight &right)		// L + R
 	{
 		double totalOuncesFromLeft = (getPounds() * 16.0) + getOunces();
 		double totalOuncesFromRight = (right.getPounds() * 16.0) + right.getOunces();
@@ -88,7 +89,7 @@ public:
 		return addedWeight;
 	}
 
-	EnglishWeight operator-(const EnglishWeight &right)
+	EnglishWeight operator-(const EnglishWeight &right)		// L - R
 	{
 		double totalOuncesFromLeft = (getPounds() * 16.0) + getOunces();
 		double totalOuncesFromRight = (right.getPounds() * 16.0) + right.getOunces();
@@ -109,6 +110,8 @@ const double EnglishWeight::getOunces() const
 {
 	return ounces;
 }
+
+// Override iostream
 ostream& operator << (ostream& strm, const EnglishWeight &obj)
 {
 	strm << endl << "========================================" << endl;
@@ -136,17 +139,20 @@ istream& operator >> (istream& strm, EnglishWeight &obj)
 
 int main()
 {
+	// Temporary variables to store user's input for pounds and ounces in EnglishWeight Object
 	int tempPounds;
 	double tempOunces;
+
 	cout << "Enter the value of pounds: ";
 	cin >> tempPounds;
 	cout << "Enter the value of Ounces: ";
 	cin >> tempOunces;
-	EnglishWeight weight(tempPounds, tempOunces);
+	EnglishWeight weight(tempPounds, tempOunces);	// EnglishWeight constructor with all parameters
 
+	// EnglishWeight Class Accessor Test
 	cout << "The weight of this object is " << weight.getPounds() << " pounds, " << weight.getOunces() << " ounces." << endl;
 
-	EnglishWeight weight2;
+	EnglishWeight weight2;	// EnglishWeight default constructor
 
 	// Input Output Override Test
 	cin >> weight2;
