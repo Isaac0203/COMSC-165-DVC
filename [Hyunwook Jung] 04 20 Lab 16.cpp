@@ -136,6 +136,7 @@ void ContactLinkedList::insertList(string n, string e, string p)
 void ContactLinkedList::displayList() const
 {
 	Contact *contactPtr = head;
+	cout << endl << endl << endl;
 	cout << "=========================Displaying...==========================" << endl;
 
 	while (contactPtr)
@@ -163,7 +164,7 @@ void ContactLinkedList::deleteList(string n)
 		contactPtr = head;
 		if (head->name == n) // If n name is in the first node
 		{
-			head = head->next;
+			head = contactPtr->next;
 			delete contactPtr;
 		}
 		else  // If n name is not in the first node
@@ -188,6 +189,21 @@ void ContactLinkedList::deleteList(string n)
 				
 				contactPtr = contactPtr->next;
 			}
+			if (contactPtr->name == n)
+			{
+				previousPtr->next = nullptr;
+				delete contactPtr;
+
+			}/*
+			if (contactPtr == nullptr)
+			{
+				cout << "You put a name that is not in this list." << endl;
+				return;
+			}
+			else if (contactPtr->next == nullptr)
+			{
+
+			}*/
 		}
 	}
 }
@@ -205,6 +221,10 @@ int main()
 	gentleman.displayList();
 	gentleman.insertList("Mynameeeee", "hello@@@@", "15151515");
 	gentleman.insertList("Yournameeeeeee", "WAAAAAA@@@@.com", "0159238");
+	gentleman.insertList("oyname", "hello@@@@", "15151515");
+	gentleman.insertList("pyname", "hello@@@@", "15151515");
+	gentleman.insertList("ryname", "hello@@@@", "15151515");
+
 	gentleman.displayList();
 	int menu;
 	string tempName;
